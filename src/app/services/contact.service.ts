@@ -12,6 +12,13 @@ export class ContactService {
 
   constructor(private http: Http) { }
 
+  public getContact(id): Observable<Contact>{
+    let URI= 'http://localhost:3000/contacts/'+id;
+    return this.http.get(URI)
+      .map(res => res.json())
+      .catch(this.handleError);
+  }
+
   public addContact(contact:Contact): Observable<Contact> {
   	let URI='http://localhost:3000/contacts';
   	let headers = new Headers;
@@ -20,14 +27,17 @@ export class ContactService {
   		last_name: contact.last_name,
   		phone: contact.phone,
   		email: contact.email,
-  		address: contact.address
+  		address: contact.address,
+      gender: contact.gender,
+      company: contact.company,
+      status: contact.status
   	});
   	console.log(body);
     headers.append('Access-Control-Allow-Origin','*');
   	headers.append('Content-Type', 'application/json');
   	return this.http
   		.post(URI, body, {headers: headers})
-      .map(res => res.json())
+      .map(res =>res.json())
   		.catch(this.handleError);
 
   }

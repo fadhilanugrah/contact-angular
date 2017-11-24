@@ -8,7 +8,7 @@ import { ContactService } from '../services/contact.service';
   styleUrls: ['./add-contact.component.css']
 })
 export class AddContactComponent implements OnInit {
-  private newContact :Contact;
+  private newContact: Contact;
   constructor(private contactServ: ContactService) { }
 
   ngOnInit() {
@@ -17,9 +17,13 @@ export class AddContactComponent implements OnInit {
   		last_name:'',
   		phone:'',
   		email:'',
-  		address:''
+  		address:'',
+      gender:  '',
+      company:  '',
+      status :  ''
   	}
   }
+
   public onSubmit() {
   	this.contactServ.addContact(this.newContact).subscribe({ 	
       response => {

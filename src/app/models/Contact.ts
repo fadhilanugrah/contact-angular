@@ -4,4 +4,7 @@ export interface Contact {
 	phone: string;
 	email: string;
 	address: string;
+	gender: boolean;
+	company: string;
+	status: boolean;
 }

@@ -1,0 +1,38 @@
+<div align="center">
+	<form #viewContactForm="ngForm">
+		<div>
+			<label for="first-name">First Name</label>
+			<input type="text" name="first-name" [(ngModel)]="contact.first_name" required>
+		</div>
+		<div>
+			<label for="last-name">Last Name</label>
+			<input type="text" name="last-name" [(ngModel)]="contact.last_name" required>
+		</div>
+		<div>
+			<label for="phone">Phone</label>
+			<input type="text" name="phone" [(ngModel)]="contact.phone" required>
+		</div>
+		<div>
+			<label for="email">email</label>
+			<input type="email" name="email" [(ngModel)]="contact.email" required>
+		</div>
+		<div>
+			<label for="address">address</label>
+			<textarea name="address" [(ngModel)]="contact.address" required></textarea>
+		</div>
+		<div>
+			<label for="gender">gender</label>
+			<input type="radio" name="gender" [value]="true" [checked]="contact.gender"  [(ngModel)]="contact.gender"> Male
+			<input type="radio" name="gender" [value]="false" [checked]="!contact.gender"  [(ngModel)]="contact.gender"> Female
+		</div>
+		<div>
+			<label for="company">company</label>
+			<input type="text" name="company" [(ngModel)]="contact.company" required>
+		</div>
+		<div>
+			<label for="status">status</label>
+			<input type="checkbox" name="status"  [(ngModel)]="contact.status">
+		</div>
+
+	</form>
+</div>

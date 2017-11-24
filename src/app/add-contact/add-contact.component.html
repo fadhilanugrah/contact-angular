@@ -1,5 +1,5 @@
 <div align="center">
-	<form (ngSubmit)="onSubmit()">
+	<form #addContactForm="ngForm" (ngSubmit)="onSubmit(); addContactForm.reset()">
 		<div>
 			<label for="first-name">First Name</label>
 			<input type="text" name="first-name" [(ngModel)]="newContact.first_name" required>
@@ -19,6 +19,19 @@
 		<div>
 			<label for="address">address</label>
 			<textarea name="address" [(ngModel)]="newContact.address" required=""></textarea>
+		</div>
+		<div>
+			<label for="gender">gender</label>
+			<input type="radio" name="gender" value="true"  [(ngModel)]="newContact.gender"> Male
+			<input type="radio" name="gender" value="false"  [(ngModel)]="newContact.gender"> Female
+		</div>
+		<div>
+			<label for="company">company</label>
+			<input type="text" name="company" [(ngModel)]="newContact.company" required>
+		</div>
+		<div>
+			<label for="status">status</label>
+			<input type="checkbox" name="status"  [(ngModel)]="newContact.status">
 		</div>
 		<div>
 			<button type="submit">Submit</button>
