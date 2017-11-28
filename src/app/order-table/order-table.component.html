@@ -1,0 +1,41 @@
+<table>
+	<thead>
+		<th>customer</th>
+		<th>delivery date</th>
+		<th>expected delivery date</th>
+		<th>order_date</th>
+		<th>product id</th>
+		<th>status</th>
+		<th>order no.</th>
+		<th>qty</th>
+		<th>aging status</th>
+		<th>Actions</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="let order of orders" id="{{order.id}}">
+			<td>{{order.customer}}</td>
+			<td>{{order.delivery_date}}</td>
+			<td>{{order.exp_delivery_date}}</td>
+			<td>{{order.order_date}}</td>
+			<td>{{order.product_id}}</td>
+			<td *ngIf="order.status === 0" class='statusRejected'>Rejected</td>
+			<td *ngIf="order.status === 1" class='statusPending'>Pending For Credit Approval</td>
+			<td *ngIf="order.status === 2" class='statusAllocated'>Inventory Allocated</td>
+			<td *ngIf="order.status === 3" class='statusInProduction'>In Production</td>
+			<td *ngIf="order.status === 4" class='statusInDelivery'>In Delivery Queue</td>
+			<td *ngIf="order.status === 5" class='statusDelivered'>Delivered</td>
+			<td>{{order.order_no}}</td>
+			<td>{{order.qty}}</td>
+			<td>{{order.aging_status}}</td>
+			<td *ngIf="order.status === 0" class='statusRejected'>Rejected</td>
+			<td *ngIf="order.status < 5 && order.status > 0">
+				<button type="button" class="rejectButton" (click)="rejectOrder(order); $event.stopPropagation();">reject</button>
+				<button type="button" class="continueButton" (click)="continueOrder(order); $event.stopPropagation();">Continue</button>
+			</td>
+			<td *ngIf="order.status === 5" class='statusDelivered'>order completed</td>
+		</tr>
+	</tbody>
+	<tbody>
+		
+	</tbody>
+</table>

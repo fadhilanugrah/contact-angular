@@ -1,0 +1,66 @@
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+thead {
+	background-color: #E53935;
+	text-align: center;
+}
+
+th {
+	padding:10px;
+	color: white;
+}
+
+td {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+button {
+	border:0;
+	box-shadow: none;
+	border-radius: 1px;
+}
+
+.rejectButton {
+	background-color: #D50000;
+	color: white;
+	padding: 2px;
+}
+
+.continueButton {
+	background-color: #283593;
+	color: white;
+	padding: 2px;
+}
+
+.statusRejected {
+	color: #F44336;
+}
+
+.statusPending {
+	color: #FF5722; 
+}
+
+.statusAllocated {
+	color: #01579B;
+}
+
+.statusInProduction {
+	color: #00897B;
+}
+
+.statusInDelivery {
+	color: #004D40;
+}
+
+.statusDelivered {
+	color: #76FF03;
+}

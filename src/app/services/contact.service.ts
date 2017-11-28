@@ -13,14 +13,14 @@ export class ContactService {
   constructor(private http: Http) { }
 
   public getContact(id): Observable<Contact>{
-    let URI= 'http://localhost:3000/contacts/'+id;
+    let URI= 'https://localhost:3000/contacts/'+id;
     return this.http.get(URI)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   public addContact(contact:Contact): Observable<Contact> {
-  	let URI='http://localhost:3000/contacts';
+  	let URI='https://localhost:3000/contacts';
   	let headers = new Headers;
   	let body = JSON.stringify({
   		first_name: contact.first_name,
