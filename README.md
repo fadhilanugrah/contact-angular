@@ -21,5 +21,5 @@ npm install
 ### running the service
 run the angular service using 
 ```
-ng serve
+ng serve --ssl 1 --ssl-key './ssl/10022376_localhost_4200.key' --ssl-cert './ssl/10022376_localhost_4200.cert'
 ```
